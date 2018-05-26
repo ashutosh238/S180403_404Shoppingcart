@@ -5,56 +5,73 @@
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Supplier</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
 
-	<!-- Create SupplireController ...@PostMapping("supplier/save")" -->
-	<form action="supplier/save" method="post">
+	<div class="container">
+  <h2>Suppliers Detail</h2>
+  <form action="supplier/save" method="post">
 
-		<table align="center" border="2" bordercolor="blue">
-			<tr>
-				<td>Email ID:</td>
-				<td><input type="text" name="emailID" value="${selectedSupplier.emailID}"></td>
-			</tr>
-			<tr>
-				<td>Supplier Name:</td>
-				<td><input type="text" name="name" value="${selectedSupplier.name}"></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td>Confirm Password:</td>
-				<td><input type="password" name="confirm_password"></td>
-			</tr>
-			<tr>
-				<td>Mobile:</td>
-				<td><input type="text" name="mobile" value="${selectedSupplier.mobile}"></td>
-			</tr>
-			<tr>
-				<td>address:</td>
-				<td><input type="textarea" name="address" value="${selectedSupplier.address}"></td>
-			</tr>
-
-			<tr>
-				<td><input type="submit" value="Save"></td>
-			</tr>
-
-		</table>
-
-	</form>
-
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="emailID" value="${selectedSupplier.emailID}">
+    </div>
+    <div class="form-group">
+      <label for="supplier">Supplier Name:</label>
+      <input type="text" class="form-control" id="supplier name" placeholder="Enter Supplier Name" name="name" value="${selectedSupplier.name}">
+    </div>
+     
+    
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+    </div>
+   <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="confirm_password">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input type="text" class="form-control" id="mobile" placeholder="Enter Contact Number" name="mobile" value="${selectedSupplier.mobile}">
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="textarea" class="form-control" id="address" placeholder="Enter address" name="address" value="${selectedSupplier.address}">
+    </div>
+    
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+</div>
 
 
 	<!--  display the list of suppliers -->
-	<table align="center" border="3" bordercolor="blue">
-		<c:forEach var="supplier" items="${suppliers}">
-
-			<tr>
-				<td>${supplier.emailID}</td>
+	<div class="container">
+  <h2>Supplier Table</h2>       
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email Id</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Date</th>
+        <th>Modification</th>
+      </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="supplier" items="${suppliers}">
+      
+      <tr>
+      
+       <td>${supplier.emailID}</td>
 				<td>${supplier.name}</td>
 				<td>${supplier.mobile}</td>
 				<td>${supplier.address}</td>
@@ -63,33 +80,12 @@
 				<td><a href="supplier/delete?emailID=${supplier.emailID}">
 						Delete</a> <a href="supplier/edit?emailID=${supplier.emailID}">
 						| Edit</a></td>
-		</tr>
-	</c:forEach>
-	</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </tr>
+      </c:forEach>
+      
+    </tbody>
+  </table>
+</div>
 
 </body>
 </html>

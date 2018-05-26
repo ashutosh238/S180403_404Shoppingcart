@@ -24,6 +24,7 @@ ${msg}
 	<jsp:include page="login_header.jsp"></jsp:include>
 	<jsp:include page="carousel.jsp"></jsp:include>
 	<jsp:include page="category_menu.jsp"></jsp:include>
+	
 	<%-- <jsp:include page="imageslider.jsp"></jsp:include> --%>
 
 	<!-- when user click login, then only login.jsp

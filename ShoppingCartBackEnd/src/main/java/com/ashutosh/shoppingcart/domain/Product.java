@@ -7,8 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component   //will create instance of User class --- user
 @Table 
@@ -25,6 +27,9 @@ public class Product {
 	private int price;
 	
 	private Date added_date;
+	
+	@Transient
+	private MultipartFile pimage;
 	
 	@ManyToOne
 	@JoinColumn(name = "category_name", updatable = false, insertable = false, nullable = false)
@@ -90,6 +95,12 @@ public class Product {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
 	}
 
 }

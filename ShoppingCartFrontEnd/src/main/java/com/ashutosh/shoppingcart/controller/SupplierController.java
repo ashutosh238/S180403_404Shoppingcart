@@ -29,6 +29,8 @@ public class SupplierController {
 			@RequestParam String password, @RequestParam String confirm_password, @RequestParam String mobile,
 			@RequestParam String address) {
 		ModelAndView mv = new ModelAndView("redirect:/manage_suppliers");
+		if(password.equals(confirm_password))
+{
 
 		user.setAddress(address);
 		user.setEmailID(emailID);
@@ -37,7 +39,13 @@ public class SupplierController {
 		user.setPassword(password);
 		user.setRole('S');
 
-		// check whether the record already exist
+}
+		else
+		{
+			mv.addObject("message", "Could not register.  password doesnt match");
+		}
+
+// check whether the record already exist
 		// with this emaild or not
 		// if existed, give message "The record already exist"
 	/*	if (userDAO.get(emailID) != null) {
