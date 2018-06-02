@@ -17,7 +17,7 @@
 	<table class="table" align="center">
 	<tr>
 		<td rowspan="6">
-		<img src="<c:url value="/resources/${ProductInfo.id}.jpg"/>" width="300" height="300"/>
+		<img src="<c:url value="/resources/${ProductInfo.id}.jpg"/>" width="300" height="500"/>
 		</td>
 		<td>Product ID</td><td>${ProductInfo.id}</td>
 	</tr>
@@ -31,7 +31,7 @@
 	</tr>	
 	<tr>
 		<td>Category</td>
-		<td>${ProductInfo.id}</td>
+		<td>${ProductInfo.category}</td>
 	</tr>
 	<tr>
 		<td>Description</td>

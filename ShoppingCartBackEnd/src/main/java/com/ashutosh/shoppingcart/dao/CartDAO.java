@@ -2,47 +2,13 @@ package com.ashutosh.shoppingcart.dao;
 
 import java.util.List;
 
-import com.ashutosh.shoppingcart.domain.Cart;
+import com.ashutosh.shoppingcart.domain.CartItem;
 
-public interface CartDAO {
-	
-	//add a product to cart
-	
-	public boolean save(Cart cart);
-	
-	public boolean update(Cart cart);
-	
-	public boolean update(List<Cart> carts, char status);
-	
-	public boolean delete(int id);
-	
-	
-	
-	
-	
-	//get my products which added to mycart
-	//select * from Cart where emailID = ?
-	public  List<Cart>  list(String emailID);
-	
-	//get cart by cart id;
-	
-	public Cart    get(int id);
-	
-	//get cart by email ID
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+public interface CartDAO 
+{
+	public boolean addToCart(CartItem cartItem);
+	public boolean deleteFromCart(CartItem cartItem);
+	public boolean updateCart(CartItem cartItem);
+	public CartItem getCartItem(int cartItemId);
+	public List<CartItem> listCartItems(String emailID);
 }

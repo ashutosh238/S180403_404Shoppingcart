@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +21,34 @@
      </ul>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-      <li><a href="mycart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+       <c:if test="${!sessionScope.loggedIn}">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="login">LOGIN</a></li>
+      <li><a href="register">REGISTER</a></li>
+      <li><a href="contactus">CONTACT US</a></li>
+      <li><a href="aboutus">ABOUT US</a></li>
+      </c:if>
+      <c:if test="${sessionScope.loggedIn}">
+      	<c:if test="${sessionScope.role=='A'}">
+      		<li><a href="#">Home</a></li>
+      		<li><a href="product">MANAGE PRODUCT</a></li>
+      	</c:if>
+      	<c:if test="${sessionScope.role=='C'}">
+      		<li><a href="#">Home</a></li>
+      		<li><a href="<c:url value="/productPage"/>">Products</a></li>
+      	</c:if>
+      </c:if>
 
     </ul>
+     <div class="nav nav-bar navbar-right">
+    	<c:if test="${sessionScope.loggedIn}">
+    	<a href="<c:url value="/showCart"/>">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+        </a>
+    	<font color="White" face="calibri" size='3'>${CartItems}&nbsp;Welcome ${sessionScope.username}</font>
+    	<a href="perform_logout">LOGOUT</a>
+    	</c:if>
+    </div>
   </div>
 </nav>
   

@@ -20,19 +20,32 @@
 
 
 
-<div class = "container">
-	<div class="wrapper">
-		<form action="validate" method="post"  name="Login_Form" class="form-signin">       
-		    <h3 class="form-signin-heading">Please Sign In</h3>
-			  <hr class="colorgraph"><br>
-			  
-			  <input type="text" class="form-control" name="id" placeholder="Enter user name" required="" autofocus="" />
-			  <input type="password" class="form-control" name="password" placeholder="Enter password" required=""/>     		  
-			 
-			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
-		</form>			
+<form action="perform_login" method="post">
+ <h1 class="well"><center><font face="Monotype Corsiva">Login Form</font></center></h1>
+	<div class="col-lg-12 well">
+	<div class="row">
+				<form>
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Login Name</label>
+								<input type="text" name="username" placeholder="Enter User Name Here.." class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Password </label>
+								<input type="password" name="password" placeholder="Enter Password Here.." class="form-control">
+							</div>
+						</div>	
+					<div>
+					<input type="submit" class="btn btn-lg btn-info" value="Submit"/>					
+					</div>
+				</form> 
+		</div>
 	</div>
-</div>
+</form>
+
 
 
 

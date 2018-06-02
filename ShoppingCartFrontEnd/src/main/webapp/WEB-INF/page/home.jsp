@@ -43,6 +43,10 @@ ${msg}
 	<c:if test="${isAdmin==true}">
 		<jsp:include page="admin/admin.jsp"></jsp:include>
 	</c:if>
+	
+	<c:if test="${isUserClickedMyCart==true}">
+		<jsp:include page="Cart.jsp"></jsp:include>
+</c:if>
 
 
 </div>

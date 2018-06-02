@@ -7,12 +7,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ashutosh.shoppingcart.dao.CategoryDAO;
+import com.ashutosh.shoppingcart.dao.UserDAO;
 import com.ashutosh.shoppingcart.domain.Category;
+import com.ashutosh.shoppingcart.domain.User;
 
 //convert this class into Servlet / Controller
 @Controller
@@ -28,7 +32,11 @@ public class HomeController {
 	@Autowired
 	private HttpSession httpSession;
 	
+	@Autowired
+	private UserDAO userDAO;
 	
+	@Autowired
+	private User user;
 	
 	//we have to define handler mapping
 	//Different types of mappings
@@ -86,13 +94,45 @@ public class HomeController {
 		
 		return mv;
 	}
+		@PostMapping("/save")
+		public ModelAndView saveUser(
+				@RequestParam String emailID, 
+				@RequestParam String name,
+				@RequestParam String mobile,
+				@RequestParam String address,
+				@RequestParam Character role,
+				@RequestParam String password,
+				@RequestParam String ConfirmPassword
+				
+				) {
+
+			ModelAndView mv = new ModelAndView("home");
+			user.setEmailID(emailID);
+			user.setName(name);
+			user.setMobile(mobile);
+			user.setAddress(address);
+			user.setRole(role);
+			user.setPassword(password);
+			//String value should be converted into integer
+			
+			// need to write one more condition.
+			if (userDAO.save(user)) {
+				mv.addObject("message", "user created Successfully");
+				return mv;
+			} else {
+				mv.addObject("message", "Could not create product.");
+
+			}
+			return mv;
+		
+	}
 	
 	
 	
 	@GetMapping("/logout")
 	public ModelAndView logout()
 	{
-		ModelAndView mv = new ModelAndView("home");
+		ModelAndView mv = new ModelAndView("logout");
 		mv.addObject("msg", "You successfully logged out from the app");
 		//we need to write some other code to 
 		//do actual logout functionality.
