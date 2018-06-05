@@ -16,25 +16,31 @@
 
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+ 
 
-<c:forEach var="category" items="${categories}">
-<ul class="nav navbar-nav">
-      
-      <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown"
-       href="#">${category.name} <span class="caret"></span></a>
+ <div class="container-fluid">
+     <c:forEach var="category" items="${categories}">
+    <ul class="nav navbar-nav">
+   
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}  <span class="caret"></span></a>
         <ul class="dropdown-menu">
-         </ul>
-      </li>
-      
-      
-     
-    </ul>
+        <li> <c:forEach var="product" items="${category.products}">
+					<div class="dropdown-content">
+						<a href="productDesc/${product.id}">${product.name}</a>
+
+					</div>
+					
+					
 </c:forEach>
-    
+</li>
+        </ul>
+      </li>
+    </ul>
+  
+  </c:forEach>
   </div>
 </nav>
+  
   
 </body>
 </html>

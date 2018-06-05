@@ -43,6 +43,15 @@ public class UserController
 				session.setAttribute("isAdmin", true);
 			}
 			else
+				if(role.getAuthority().equals("S"))
+				{
+					loggedIn=true;
+					page="UserHome";
+					session.setAttribute("loggedIn", loggedIn);
+					session.setAttribute("username", username);
+					session.setAttribute("isAdmin", true);
+				}
+		else
 			{
 				loggedIn=true;
 				page="UserHome";

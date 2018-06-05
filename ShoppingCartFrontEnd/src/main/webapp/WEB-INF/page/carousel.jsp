@@ -27,28 +27,36 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
+      <a href="productPage">
         <img src="resources/images/R12.png" alt="mobile" style="width:100%;">
+      </a>
       </div>
-
       <div class="item">
-        <img src="resources/images/12.jpg" alt="cart" style="width:100%;">
+      <a href="productPage">
+        <img src="resources/images/12.jpg" alt="cart" style="width:100%;"></a>
       </div>
     
       <div class="item">
-        <img src="resources/images/s12.jpg" alt="shoe" style="width:100%;">
+      <a href="productPage">
+        <img src="resources/images/s12.jpg" alt="shoe" style="width:100%;"></a>
       </div>
        <div class="item">
-        <img src="resources/images/fashion.jpg" alt="clothes" style="width:100%;">
+       <a href="productPage">
+        <img src="resources/images/fashion.jpg" alt="clothes" style="width:100%;"></a>
       </div>
        <div class="item">
-        <img src="resources/images/card.png" alt="card" style="width:100%;">
+       <a href="productPage">
+        <img src="resources/images/card.png" alt="card" style="width:100%;"></a>
       </div>
        <div class="item">
-        <img src="resources/images/ele.jpg" alt="laptop" style="width:100%;">
+       <a href="productPage">
+        <img src="resources/images/ele.jpg" alt="laptop" style="width:100%;"></a>
       </div>
       
        <div class="item">
+       <a href="productPage">
         <img src="resources/images/t.jpg" alt="clothes" style="width:100%;">
+      </a>
       </div>
     </div>
 

@@ -31,7 +31,7 @@
 	</tr>	
 	<tr>
 		<td>Category</td>
-		<td>${ProductInfo.category}</td>
+		<td>${ProductInfo.category_name}</td>
 	</tr>
 	<tr>
 		<td>Description</td>

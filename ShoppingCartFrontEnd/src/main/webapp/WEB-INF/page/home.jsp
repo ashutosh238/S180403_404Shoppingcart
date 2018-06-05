@@ -22,8 +22,9 @@ ${msg}
 
 	<!--  include login_header.jsp here -->
 	<jsp:include page="login_header.jsp"></jsp:include>
-	<jsp:include page="carousel.jsp"></jsp:include>
+	<jsp:include page="carousel.jsp"></jsp:include> 
 	<jsp:include page="category_menu.jsp"></jsp:include>
+	<br> 
 	
 	<%-- <jsp:include page="imageslider.jsp"></jsp:include> --%>
 

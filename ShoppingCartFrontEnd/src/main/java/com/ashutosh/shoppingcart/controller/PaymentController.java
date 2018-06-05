@@ -1,5 +1,6 @@
 package com.ashutosh.shoppingcart.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -7,13 +8,17 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ashutosh.shoppingcart.dao.CartDAO;
 import com.ashutosh.shoppingcart.dao.OrderDAO;
+import com.ashutosh.shoppingcart.dao.PaymentDAO;
 import com.ashutosh.shoppingcart.domain.CartItem;
 import com.ashutosh.shoppingcart.domain.OrderDetail;
+import com.ashutosh.shoppingcart.domain.Payment;
 
 @Controller
 public class PaymentController 
@@ -25,6 +30,12 @@ public class PaymentController
 	@Autowired
 	OrderDAO orderDAO;
 
+	@Autowired
+	PaymentDAO paymentDAO;
+	
+	@Autowired 
+	Payment payment;
+	
 	@RequestMapping(value="orderConfirm")
 	public String showOrderConfirm(HttpSession session,Model m)
 	{
@@ -62,9 +73,39 @@ public class PaymentController
 		
 		
 	
-		return "Receipt";
+		return "payment";
 	}
 	
+
+	@PostMapping("/savepayment")
+	public ModelAndView savePayment(
+			@RequestParam int cardNumber, 
+			@RequestParam Date expirationDate,
+			@RequestParam int cvCode,
+			@RequestParam String couponCode,
+			@RequestParam String name
+			
+			) {
+
+		ModelAndView mv = new ModelAndView("Receipt");
+		payment.setCardNumber(cardNumber);
+		payment.setExpirationDate(expirationDate);
+		payment.setCvCode(cvCode);
+		payment.setCoponCode(couponCode);
+		payment.setName(name);
+		//String value should be converted into integer
+		
+		// need to write one more condition.
+		if (paymentDAO.save(payment)) {
+			mv.addObject("msg", "payment done Successfully");
+			return mv;
+		} else {
+			mv.addObject("msg", "problem in payment process");
+
+		}
+		return mv;
+	
+}
 	public int calculateTotalCost(List<CartItem> cartItems)
 	{
 		int totalCost=0;

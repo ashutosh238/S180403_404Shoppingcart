@@ -30,12 +30,14 @@
 			<td colspan="2"></td>
 		</tr>
 </table>
+
 <form action="paymentConfirmation" method="post">
 <table align="center" width="50%">
 	<tr bgcolor="orange"><td colspan="2"><center>Payment Details</center></td></tr>
 	<tr bgcolor="cyan"><td colspan="2"><center><input type="radio" name="mode" value="CS">Cash
 	<input type="radio" name="mode" value="CC">Credit Card</center></td></tr>
 	<tr bgcolor="gray"><td colspan="2"><center><input type="submit" value="Proceed to Pay" class="btn btn-info"></center></td></tr>
+
 </table>
 </form>
 </div>

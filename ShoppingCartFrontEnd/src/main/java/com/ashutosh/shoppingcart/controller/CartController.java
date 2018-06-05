@@ -26,7 +26,11 @@ public class CartController
 	ProductDAO productDAO;
 	
 	@RequestMapping(value="/showCart")
-	public String showCart(Model m,HttpSession session)
+	public String showCart(Model m,HttpSession session)/*the Model.
+
+Simply put, the model can supply attributes used for rendering views.
+
+To provide a view with usable data, we simply add this data to its Model object. Additionally, maps with attributes can be merged with Model instances:*/
 	{
 		String username=(String)session.getAttribute("username");
 		List<CartItem> listCartItems=cartDAO.listCartItems(username);
@@ -37,7 +41,7 @@ public class CartController
 		
 		return "Cart";
 	}
-	
+	//@PathVariable used for accessing the values from the URI template.generate a URI from a template, retrieve a collection of variable names used in the template, determine whether two templates are equivalent, and return the template's string.
 	@RequestMapping(value="/addToCart/{id}")
 	public String addToCart(@PathVariable("id") String id,@RequestParam("quantity")int quantity,HttpSession session,Model m)
 	{

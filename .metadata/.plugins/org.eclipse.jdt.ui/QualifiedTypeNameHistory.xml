@@ -15,4 +15,14 @@
     <fullyQualifiedTypeName name="com.ashutosh.shoppingcart.dao.CartDAO"/>
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="com.ashutosh.shoppingcart.dao.OrderDAO"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.TableGenerators"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.ashutosh.shoppingcart.dao.PaymentDAO"/>
+    <fullyQualifiedTypeName name="com.ashutosh.shoppingcart.domain.Payment"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
 </qualifiedTypeNameHistroy>

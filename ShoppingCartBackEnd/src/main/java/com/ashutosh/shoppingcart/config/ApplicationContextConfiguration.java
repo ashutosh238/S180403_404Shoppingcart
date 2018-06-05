@@ -14,9 +14,6 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.ashutosh.shoppingcart.domain.Product;
-import com.ashutosh.shoppingcart.domain.User;
-
 @Configuration
 @ComponentScan("com.ashutosh")
 @EnableTransactionManagement
