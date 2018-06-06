@@ -6,6 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -97,6 +99,18 @@ public class ProductDAOImpl  implements ProductDAO{
 		
 	}
 
+	public List<Product> searchByCategory(String category_name) {
+		
+		return	(List<Product>) sessionFactory.getCurrentSession().createQuery("from Product where category_name=:category_name").setParameter("category_name",category_name).list();
+			
+		
+		
+	}
+
+	
+	
+	
+	
 }
 
 

@@ -14,11 +14,12 @@
 <body>
 
 <nav class="navbar navbar-inverse">
+
+ 
+
   <div class="container-fluid">
-     <ul class="nav navbar-nav navbar-left">
-     <li><a href="productPage"><span class="glyphicon glyphicon-th"></span> Product</a></li>
+ 
      
-     </ul>
     
     <ul class="nav navbar-nav navbar-right">
        <c:if test="${!sessionScope.loggedIn}">
@@ -30,8 +31,8 @@
       </c:if>
       <c:if test="${sessionScope.loggedIn}">
       	<c:if test="${sessionScope.role=='A'}">
-      		<li><a href="#">Home</a></li>
-      		<li><a href="product">MANAGE PRODUCT</a></li>
+      		<li><a href="page/home">Home</a></li>
+      		<li><a href="manage_products">MANAGE PRODUCT</a></li>
       	</c:if>
       	<c:if test="${sessionScope.role=='C'}">
       		<li><a href="#">Home</a></li>
@@ -40,6 +41,21 @@
       </c:if>
 
     </ul>
+    <ul class="nav navbar-nav navbar-left">
+     <li><a href="productPage"><span class="glyphicon glyphicon-th"></span> Product</a></li>
+     
+  <form class="navbar-form navbar-left" action="search">
+
+      <div class="form-group">
+
+        <input type="text" class="form-control" placeholder="Search" name="category_name">
+
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+     </ul>
      <div class="nav nav-bar navbar-right">
     	<c:if test="${sessionScope.loggedIn}">
     	<a href="<c:url value="/showCart"/>">

@@ -142,9 +142,14 @@ public class ProductController {
 		return "redirect:/manage_products";
 	}
 	
-	
-	
-	
+	@RequestMapping("search")
+	public String getProductById(@RequestParam("category_name") String category_name,Model model){
+		 List<Product> products=productDAO.searchByCategory(category_name);
+		model.addAttribute("products",products);
+		products.size();
+		return "viewport";
+		
+	}
 	
 	
 	

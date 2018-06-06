@@ -72,8 +72,9 @@
        
 <td>${p.id}</td>
 <td>${p.name}</td>
-<td>${p.description}</td>
 <td>${p.price}</td>
+<td>${p.description}</td>
+
 <td> 
 <a href="product/delete?id=${p.id}">Delete</a> <a href="product/edit?id=${p.id}"> | Edit</a>
 
