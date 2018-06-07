@@ -11,7 +11,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+
+
+<nav class="navbar navbar-inverse">
+ 
+
+ <div class="container-fluid">
+     <c:forEach var="category" items="${categories}">
+    <ul class="nav navbar-nav">
+   
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        <li> <c:forEach var="product" items="${category.products}">
+					<div class="dropdown-content">
+						<a href="productDesc/${product.id}">${product.name}</a>
+
+					</div>
+					
+					
+</c:forEach>
+</li>
+        </ul>
+      </li>
+    </ul>
+  
+  </c:forEach>
+  </div>
+</nav>	
+<br><br>
 <c:forEach items="${listProducts}" var="product">
 		<div class = "col-sm-4 col-md-4">
 			<a href="<c:url value="productDesc/${product.id}"/>">
@@ -24,6 +53,8 @@
 		</div>
 </c:forEach>
 
+
 </body>
+
 </html>
 

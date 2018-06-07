@@ -23,7 +23,7 @@
     
     <ul class="nav navbar-nav navbar-right">
        <c:if test="${!sessionScope.loggedIn}">
-      <li class="active"><a href="/">Home</a></li>
+      <li class="active"><a href="<c:url value="/"/>">Home</a></li>
       <li><a href="login">LOGIN</a></li>
       <li><a href="register">REGISTER</a></li>
       <li><a href="contactus">CONTACT US</a></li>
@@ -31,11 +31,11 @@
       </c:if>
       <c:if test="${sessionScope.loggedIn}">
       	<c:if test="${sessionScope.role=='A'}">
-      		<li><a href="page/home">Home</a></li>
+      		<li><a href="<c:url value="/"/>">Home</a></li>
       		<li><a href="manage_products">MANAGE PRODUCT</a></li>
       	</c:if>
       	<c:if test="${sessionScope.role=='C'}">
-      		<li><a href="#">Home</a></li>
+      		<li><a href="<c:url value="/"/>">Home</a></li>
       		<li><a href="<c:url value="/productPage"/>">Products</a></li>
       	</c:if>
       </c:if>

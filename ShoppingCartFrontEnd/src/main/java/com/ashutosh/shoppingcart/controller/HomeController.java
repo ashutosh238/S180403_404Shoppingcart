@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ashutosh.shoppingcart.dao.CategoryDAO;
 import com.ashutosh.shoppingcart.dao.UserDAO;
 import com.ashutosh.shoppingcart.domain.Category;
+import com.ashutosh.shoppingcart.domain.Product;
 import com.ashutosh.shoppingcart.domain.User;
+import com.ashutosh.shoppingcart.dao.ProductDAO;
 
 //convert this class into Servlet / Controller
 @Controller
@@ -36,6 +39,9 @@ public class HomeController {
 	private UserDAO userDAO;
 	
 	@Autowired
+	private ProductDAO productDAO;
+	
+	@Autowired
 	private User user;
 	
 	//we have to define handler mapping
@@ -50,17 +56,19 @@ public class HomeController {
 		@GetMapping("/")
 	//@RequestMapping(value="/",   method = RequestMethod.GET)
 	public ModelAndView homePage()
-	{
-			ModelAndView mv = new ModelAndView("home");
+	{ModelAndView mv = new ModelAndView("home");
+			List<Product> listProducts=productDAO.list();
+			mv.addObject("listProducts", listProducts);
+			//return "ProductPage";
 			
 			//get all the categories categoryDAO.list()
 		List<Category> categories=	categoryDAO.list();
 		
 		//will be available only in HomeController and Home.jsp
-		//mv.addObject("categories", categories);
+		mv.addObject("categories", categories);
 		
 		//categories should be available in all resources
-		httpSession.setAttribute("categories", categories);
+		//httpSession.setAttribute("categories", categories);
 		return mv;
 		
 			
