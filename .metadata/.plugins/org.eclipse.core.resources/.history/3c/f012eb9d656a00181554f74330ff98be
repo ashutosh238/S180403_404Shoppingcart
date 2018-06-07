@@ -1,0 +1,5 @@
+package com.ashutosh.shoppingcart.domain;
+
+public class Contact {
+
+}

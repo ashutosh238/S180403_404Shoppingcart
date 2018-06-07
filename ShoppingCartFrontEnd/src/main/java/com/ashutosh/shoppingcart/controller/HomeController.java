@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ashutosh.shoppingcart.dao.CategoryDAO;
+import com.ashutosh.shoppingcart.dao.ContactDAO;
 import com.ashutosh.shoppingcart.dao.UserDAO;
 import com.ashutosh.shoppingcart.domain.Category;
+import com.ashutosh.shoppingcart.domain.Contact;
 import com.ashutosh.shoppingcart.domain.Product;
 import com.ashutosh.shoppingcart.domain.User;
 import com.ashutosh.shoppingcart.dao.ProductDAO;
@@ -41,9 +43,15 @@ public class HomeController {
 	@Autowired
 	private ProductDAO productDAO;
 	
+	
 	@Autowired
 	private User user;
 	
+	@Autowired
+	private ContactDAO contactDAO;
+	
+	@Autowired
+	private Contact contact;
 	//we have to define handler mapping
 	//Different types of mappings
 	//@GetMapping - doGet
@@ -102,6 +110,57 @@ public class HomeController {
 		
 		return mv;
 	}
+		
+		@GetMapping("/contact")	
+		
+		public ModelAndView contact()
+		{
+				//if the user click register, this method will call
+				//--discuss tomorrow.
+				//Model,  ModelAndView
+				//navigate to home page
+			ModelAndView mv= new ModelAndView("home");	
+			
+			//carry the data
+			//mv.addObject("msg", "Thank you for registration");
+			mv.addObject("isUserClicked", true);
+				
+			
+			return mv;
+		}
+		
+		@PostMapping("/saveGriviance")
+		public ModelAndView saveGriviance(
+				@RequestParam String emailID, 
+				@RequestParam String name,
+				@RequestParam String subject,
+				@RequestParam String message
+				
+				
+				) {
+			contact.setEmailID(emailID);
+			contact.setMessage(message);
+			contact.setName(name);
+			contact.setSubject(subject);
+			ModelAndView mv = new ModelAndView("home");
+			
+			//String value should be converted into integer
+			
+			// need to write one more condition.
+			if (contactDAO.saveContact(contact)) {
+				mv.addObject("msg", "Complaint genereted successfully");
+				return mv;
+			} else {
+				mv.addObject("msg", "problem in generating complaint");
+
+			}
+			return mv;
+		
+	}
+	
+
+		
+		
 		@PostMapping("/save")
 		public ModelAndView saveUser(
 				@RequestParam String emailID, 
@@ -134,6 +193,10 @@ public class HomeController {
 			return mv;
 		
 	}
+		
+		
+		
+		
 	
 	
 	

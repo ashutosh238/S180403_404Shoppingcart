@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<title>Bootstrap Example</title>
+<title>Admin Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
   <a href="manage_categories" class="btn btn-info" role="button">Manage Categories</a>
   <a href="manage_suppliers" class="btn btn-info" role="button">Manage Suppliers</a>
   <a href="manage_products" class="btn btn-info" role="button">Manage Produts</a>
-  
+  <a href="chk_query" class="btn btn-info" role="button">Check Complaints</a>
 </div>
 
 	

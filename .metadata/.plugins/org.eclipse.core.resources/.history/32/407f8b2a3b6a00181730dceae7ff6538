@@ -1,0 +1,5 @@
+package com.ashutosh.shoppingcart.dao.impl;
+
+public class CustomerqueryDAOImpl {
+
+}

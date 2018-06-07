@@ -42,14 +42,14 @@
 </nav>	
 <br><br>
 <c:forEach items="${listProducts}" var="product">
-		<div class = "col-sm-4 col-md-4">
+
+		<div class = "col-sm-3 col-md-3">
 			<a href="<c:url value="productDesc/${product.id}"/>">
 			<img src = "<c:url value="resources/${product.id}.jpg"/>" width="100" height="150" alt = "Generic thumbnail">
 			</a>
- 			<p>
-      	 		<h3>${product.name}</h3>
-      	 		<h3>${product.price}</h3>
-      		</p>
+ 			
+      	 		<h4>${product.name}</h4>
+      	 		<h4>Rs ${product.price}</h4>
 		</div>
 </c:forEach>
 

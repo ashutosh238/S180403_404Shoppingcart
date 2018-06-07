@@ -26,7 +26,7 @@
       <li class="active"><a href="<c:url value="/"/>">Home</a></li>
       <li><a href="login">LOGIN</a></li>
       <li><a href="register">REGISTER</a></li>
-      <li><a href="contactus">CONTACT US</a></li>
+      <li><a href="contact">CONTACT US</a></li>
       <li><a href="aboutus">ABOUT US</a></li>
       </c:if>
       <c:if test="${sessionScope.loggedIn}">

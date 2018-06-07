@@ -14,7 +14,8 @@
 </head>
 <body>
 
-${msg}
+<h2>${msg}</h2>
+
 
 
 	<center>
@@ -50,7 +51,9 @@ ${msg}
 	<c:if test="${isUserClickedMyCart==true}">
 		<jsp:include page="Cart.jsp"></jsp:include>
 </c:if>
-
+<c:if test="${isUserClicked==true}">
+		<jsp:include page="Contact.jsp"></jsp:include>
+</c:if>
 
 </div>
 </body>
