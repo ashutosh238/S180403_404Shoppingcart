@@ -83,6 +83,9 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("isAdminClickedManageProducts", true);
 		
+		List<Category> categories =  categoryDAO.list();
+		httpSession.setAttribute("categories", categories);
+		
 		List<Product> products =  productDAO.list();
 		httpSession.setAttribute("products", products);
 

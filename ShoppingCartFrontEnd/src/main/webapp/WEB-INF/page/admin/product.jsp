@@ -76,8 +76,9 @@
 <td>${p.description}</td>
 
 <td> 
-<a href="product/delete?id=${p.id}">Delete</a> <a href="product/edit?id=${p.id}"> | Edit</a>
-
+<a href="product/delete?id=${p.id}">Delete</a> 
+<a href="product/edit/?id=${p.id}"> | Edit</a>
+ 
    </td>
 
 

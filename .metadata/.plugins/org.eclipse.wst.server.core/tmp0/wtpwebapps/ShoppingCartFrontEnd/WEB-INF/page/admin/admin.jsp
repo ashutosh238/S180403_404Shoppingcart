@@ -29,6 +29,7 @@
 
 	<c:if test="${isAdminClickedManageProducts==true}">
 		<jsp:include page="product.jsp"></jsp:include>
+		<jsp:include page="category.jsp"></jsp:include>
 	</c:if>
 
 	<c:if test="${isAdminClickedManageCategories==true}">
