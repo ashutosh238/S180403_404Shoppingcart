@@ -184,10 +184,10 @@ public class HomeController {
 			
 			// need to write one more condition.
 			if (userDAO.save(user)) {
-				mv.addObject("msg", "user created Successfully");
+				mv.addObject("message", "user created Successfully");
 				return mv;
 			} else {
-				mv.addObject("msg", "Could not create product.");
+				mv.addObject("message", "Could not create product.");
 
 			}
 			return mv;
