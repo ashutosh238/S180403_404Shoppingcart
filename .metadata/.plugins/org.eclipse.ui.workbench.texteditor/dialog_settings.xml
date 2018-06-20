@@ -2,37 +2,44 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="customerquery" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
+		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="user"/>
-			<item value="niit"/>
-			<item value="username"/>
-			<item value="ashutosh.shoppingcart"/>
-			<item value="niit.model"/>
-			<item value="CartId"/>
-			<item value="listCarts"/>
-			<item value="CartItem"/>
-			<item value="model"/>
-			<item value="shopingcart"/>
-			<item value="cartItem"/>
+			<item value="WEBRESOLVER"/>
+			<item value="friendlogonname"/>
+			<item value="Forum"/>
+			<item value="forum"/>
+			<item value="forumDAO"/>
+			<item value="ForumDAO  "/>
+			<item value="ForumDAO forumDAO"/>
+			<item value="forumcomment"/>
+			<item value="ForumComment"/>
+			<item value="ForumCommentDAO"/>
+			<item value="forumcommentDAO"/>
+			<item value="discussiontxt"/>
+			<item value="commemtid"/>
+			<item value="jobdetail"/>
+			<item value="JobDetail"/>
 		</list>
 		<list key="replacehistory">
-			<item value="customerquery"/>
-			<item value="ashutosh.shoppingcart"/>
-			<item value="emailID"/>
-			<item value=""/>
-			<item value="ashutosh.shoppingcart.domain"/>
-			<item value="ashutosh.domain"/>
-			<item value="id"/>
-			<item value="list"/>
-			<item value="Cart"/>
-			<item value="domain"/>
-			<item value="shoppingcart"/>
-			<item value="ashutosh"/>
+			<item value="friendloginname"/>
+			<item value="Friend"/>
+			<item value="friend"/>
+			<item value="friendDAO"/>
+			<item value="FriendDAO "/>
+			<item value="FriendDAO friendDAO"/>
+			<item value="FriendDAO"/>
+			<item value="discussiontext"/>
+			<item value="commentid"/>
+			<item value="forumcomment"/>
+			<item value="ForumComment"/>
+			<item value="forumcommentDAO"/>
+			<item value="ForumCommentDAO"/>
+			<item value="createDate"/>
+			<item value="Forum"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

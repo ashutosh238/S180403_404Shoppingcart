@@ -56,12 +56,19 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.ashutosh.socialhubmiddelware"/>
+			<item value="com.ashutosh.SocialHubMiddelware"/>
+			<item value="com.ashutosh.socialhub"/>
 			<item value="com.ashutosh.shoppingcart"/>
 		</list>
 		<list key="groupId">
 			<item value="com.ashutosh"/>
 		</list>
 		<list key="artifactId">
+			<item value="SocialHubMiddelware"/>
+			<item value="SocialHubBAckEnd"/>
+			<item value="SocialHubBackEnd"/>
+			<item value="SocialHub"/>
 			<item value="ShoppingCartFrontEnd"/>
 			<item value="ShoppingCartBackEnd"/>
 		</list>

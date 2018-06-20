@@ -167,7 +167,7 @@ public class HomeController {
 				@RequestParam String name,
 				@RequestParam String mobile,
 				@RequestParam String address,
-				@RequestParam Character role,
+				//@RequestParam Character role,
 				@RequestParam String password,
 				@RequestParam String ConfirmPassword
 				
@@ -178,13 +178,13 @@ public class HomeController {
 			user.setName(name);
 			user.setMobile(mobile);
 			user.setAddress(address);
-			user.setRole(role);
+			user.setRole('C');
 			user.setPassword(password);
 			//String value should be converted into integer
 			
 			// need to write one more condition.
 			if (userDAO.save(user)) {
-				mv.addObject("msg", "user created Successfully");
+				mv.addObject("msg", "user created Successfully :"+name);
 				return mv;
 			} else {
 				mv.addObject("msg", "Could not create product.");

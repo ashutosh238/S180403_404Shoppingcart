@@ -41,10 +41,10 @@
       <label for="address">Address</label>
       <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="role">Role</label>
       <input type="text" class="form-control" id="role" placeholder="Enter Role(A,S,C)" name="role">
-    </div>
+    </div> -->
     
 
     

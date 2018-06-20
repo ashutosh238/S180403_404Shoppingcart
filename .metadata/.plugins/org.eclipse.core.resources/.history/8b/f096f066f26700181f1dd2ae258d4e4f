@@ -1,5 +1,0 @@
-package com.ashutosh.shoppingcart.dao;
-
-public interface paymentDAO {
-
-}
